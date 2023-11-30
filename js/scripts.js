@@ -3,9 +3,10 @@ window.addEventListener("load", function() {
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    let result = [];
-    let test = document.getElementById("sentence").value;
-    result.push(test);
-    console.log(result);
+    let formInput = document.getElementById("sentence").value;
+    let inputArray = Array.from(formInput.split(" "));
+
+    let reversedArray = inputArray.reverse();
+    console.log(reversedArray.join(" "));
   });
 });
