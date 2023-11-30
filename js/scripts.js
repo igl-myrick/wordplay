@@ -3,10 +3,16 @@ window.addEventListener("load", function() {
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    let formInput = document.getElementById("sentence").value;
-    let inputArray = Array.from(formInput.split(" "));
+    const formInput = document.getElementById("sentence").value;
+    const inputArray = Array.from(formInput.split(" "));
+    const outputArray = inputArray.reverse().filter((word) => word.length > 2);
 
-    let reversedArray = inputArray.reverse();
-    console.log(reversedArray.join(" "));
+    let h1 = document.createElement("h1");
+    h1.append("Result");
+    document.body.append(h1);
+
+    let p = document.createElement("p");
+    p.append(outputArray.join(" "));
+    document.body.append(p);
   });
 });
